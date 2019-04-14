@@ -26,6 +26,7 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 	$scope.difficultyChart = _.fill(Array(MAX_BINS), 2);
 	$scope.transactionDensity = _.fill(Array(MAX_BINS), 2);
 	$scope.gasSpending = _.fill(Array(MAX_BINS), 2);
+	//$scope.stablePrice = _.fill(Array(MAX_BINS), 0);
 	$scope.miners = [];
 
 
@@ -358,6 +359,9 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 
 				if( !_.isEqual($scope.gasSpending, data.gasSpending) && data.gasSpending.length >= MAX_BINS )
 					$scope.gasSpending = data.gasSpending;
+
+				if( !_.isEqual($scope.stablePrice, data.stablePrice) && data.stablePrice.length >= MAX_BINS )
+					$scope.stablePrice = data.stablePrice;
 
 				if( !_.isEqual($scope.miners, data.miners) ) {
 					$scope.miners = data.miners;

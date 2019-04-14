@@ -77,6 +77,12 @@ block content
           span.small-title gas spending
           sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
           div.clearfix
+      div.col-xs-2.stat-holder
+        div.big-info.chart.text-info
+          i.icon-gasprice
+          span.small-title stablecoin price
+          sparkchart.big-details.spark-stableprice(data="{{stablePrice.join(',')}}")
+          div.clearfix
       div.clearfix
 
     div.row(ng-cloak, style="padding-top: 10px")
