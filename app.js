@@ -197,7 +197,7 @@ api.on('connection', function (spark)
 							data: stats
 						});
 
-						console.success('API', 'BLK', 'Block:', data.block['number'], 'td:', data.block['totalDifficulty'], 'from:', data.id, 'ip:', spark.address.ip);
+						console.success('API', 'BLK', 'Block:', data.block['number'], 'price:', data.block['price'], 'td:', data.block['totalDifficulty'], 'from:', data.id, 'ip:', spark.address.ip);
 
 						Nodes.getCharts();
 					}
@@ -394,7 +394,7 @@ var latencyTimeout = setInterval( function ()
 			serverTime: _.now()
 		}
 	});
-}, 5000);
+}, 1000);
 
 
 // Cleanup old inactive nodes
@@ -407,7 +407,7 @@ var nodeCleanupTimeout = setInterval( function ()
 
 	Nodes.getCharts();
 
-}, 1000*60*60);
+}, 1000*60);
 
 server.listen(process.env.PORT || 3000);
 
