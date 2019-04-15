@@ -112,6 +112,11 @@ block content
           span.small-title gas limit
           sparkchart.big-details.spark-difficulty(data="{{lastGasLimit.join(',')}}")
           div.clearfix
+      div.col-xs-2.stat-holder
+        div.big-info.chart.text-info
+          i.icon-mining
+          span.small-title turn weight
+          sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
       div.clearfix
 
     div.row(ng-cloak, style="padding-top: 10px")
