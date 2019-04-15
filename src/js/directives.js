@@ -1,6 +1,8 @@
 
 /* Directives */
 
+var MAX_PROPAGATION_RANGE = 2000;
+
 angular.module('netStatsApp.directives', [])
 	.directive('appVersion', ['version', function (version) {
 		return function(scope, elm, attrs) {
@@ -329,7 +331,7 @@ angular.module('netStatsApp.directives', [])
 				var TICKS = 40;
 
 				var x = d3.scale.linear()
-					.domain([0, 10000])
+					.domain([0, MAX_PROPAGATION_RANGE])
 					.rangeRound([0, width])
 					.interpolate(d3.interpolateRound);
 
@@ -338,7 +340,7 @@ angular.module('netStatsApp.directives', [])
 					.interpolate(d3.interpolateRound);
 
 				var color = d3.scale.linear()
-					.domain([1000, 3000, 7000, 10000])
+					.domain([1000, 2000, 3000, MAX_PROPAGATION_RANGE])
 					.range(["#50fa7b", "#f1fa8c", "#ffb86c", "#ff5555"]);
 
 				var xAxis = d3.svg.axis()
@@ -371,7 +373,7 @@ angular.module('netStatsApp.directives', [])
 					var data = scope.data;
 
 					var x = d3.scale.linear()
-						.domain([0, 10000])
+						.domain([0, MAX_PROPAGATION_RANGE])
 						.rangeRound([0, width])
 						.interpolate(d3.interpolateRound);
 
