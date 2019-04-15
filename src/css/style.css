@@ -203,6 +203,10 @@ span.small-title span.small {
 	height: 242px;
 }
 
+.big-info.chart.xdouble-chart {
+	padding-top: 6px;
+}
+
 .blocks-holder {
 	width: 288px;
 	padding-top: 6px;
