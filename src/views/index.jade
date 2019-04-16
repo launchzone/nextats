@@ -102,7 +102,7 @@ block content
       div.col-xs-2.stat-holder
         div.big-info.chart.text-info
           i.icon-mining
-          span.small-title turn weight
+          span.small-title block weight
           sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
       div.clearfix
 
@@ -128,7 +128,7 @@ block content
               i.icon-block(data-toggle="tooltip", data-placement="top", title="Last block", ng-click="orderTable(['-stats.block.number', 'stats.block.propagation'], false)")
             th.th-blockhash &nbsp;
             th.th-blockhash
-              i.icon-difficulty(data-toggle="tooltip", data-placement="top", title="Total difficulty", ng-click="orderTable(['-stats.block.totalDifficulty'], false)")
+              i.icon-difficulty(data-toggle="tooltip", data-placement="top", title="Total weight", ng-click="orderTable(['-stats.block.totalDifficulty'], false)")
             th
               i.icon-check-o(data-toggle="tooltip", data-placement="top", title="Block transactions", ng-click="orderTable(['-stats.block.transactions.length'], false)")
             th
