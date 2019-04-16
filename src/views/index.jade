@@ -51,17 +51,6 @@ block content
       div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
-            div.big-info.chart.double-chart.xdouble-chart.text-highlight
-              i.icon-mining
-              span.small-title last blocks sealers
-              div.blocks-holder(ng-repeat='miner in miners track by miner.miner', data-toggle="tooltip", data-placement="right", data-original-title="{{miner.blocks}}")
-                div.block-count(class="{{miner.blocks | minerBlocksClass : 'text-'}}") {{miner.blocks}}
-                div.small-title-miner {{miner.miner | minerNameFilter : miner.name}}
-                minerblock(blocks="{{miner.blocks}}")
-                div.clearfix
-      div.col-xs-3
-        div.row(ng-cloak)
-          div.col-xs-12.stat-holder
             div.big-info.chart(class="{{ avgBlockTime | avgTimeClass }}")
               i.icon-time
               span.small-title block time
@@ -104,6 +93,17 @@ block content
               span.small-title block weight
               sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
               div.clearfix
+      div.col-xs-3
+        div.row(ng-cloak)
+          div.col-xs-12.stat-holder
+            div.big-info.chart.double-chart.xdouble-chart.text-highlight
+              i.icon-mining
+              span.small-title last blocks sealers
+              div.blocks-holder(ng-repeat='miner in miners track by miner.miner', data-toggle="tooltip", data-placement="right", data-original-title="{{miner.blocks}}")
+                div.block-count(class="{{miner.blocks | minerBlocksClass : 'text-'}}") {{miner.blocks}}
+                div.small-title-miner {{miner.miner | minerNameFilter : miner.name}}
+                minerblock(blocks="{{miner.blocks}}")
+                div.clearfix
 
     div.row(ng-cloak, style="padding-top: 10px")
       table.table.table-striped
