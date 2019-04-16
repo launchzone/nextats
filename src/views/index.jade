@@ -5,7 +5,7 @@ block content
   div.container-fluid(ng-controller='StatsCtrl')
     //- top row
     div.row(ng-cloak)
-      div.col-xs-2
+      div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.bestblock.text-info
@@ -24,10 +24,10 @@ block content
                 span.small-title avg block time
                 span.big-details {{ avgBlockTime | avgTimeFilter }}
               div.clearfix
-      div.col-xs-4.stat-holder.map-holder
+      div.col-xs-6.stat-holder.map-holder
         //- div.col-xs-12
         nodemap#mapHolder(data="map")
-      div.col-xs-2
+      div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.gasprice.text-info
@@ -48,7 +48,7 @@ block content
               div.clearfix
     //- second rows
     div.row(ng-cloak)
-      div.col-xs-2
+      div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.double-chart.xdouble-chart.text-highlight
@@ -59,7 +59,7 @@ block content
                 div.small-title-miner {{miner.miner | minerNameFilter : miner.name}}
                 minerblock(blocks="{{miner.blocks}}")
                 div.clearfix
-      div.col-xs-2
+      div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart(class="{{ avgBlockTime | avgTimeClass }}")
@@ -74,7 +74,7 @@ block content
               span.small-title block propagation
               histogram.big-details.d3-blockpropagation(data="blockPropagationChart")
               div.clearfix
-      div.col-xs-2
+      div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
@@ -89,7 +89,7 @@ block content
               span.small-title gas spending
               sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
               div.clearfix
-      div.col-xs-2
+      div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
