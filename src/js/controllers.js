@@ -332,13 +332,13 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 				if( !_.isEqual($scope.avgHashrate, data.avgHashrate) )
 					$scope.avgHashrate = data.avgHashrate;
 
-				if( !_.isEqual($scope.lastGasLimit, data.gasLimit) && data.gasLimit.length >= MAX_BINS )
+				if( !_.isEqual($scope.lastGasLimit, data.gasLimit) )
 					$scope.lastGasLimit = data.gasLimit;
 
-				if( !_.isEqual($scope.lastBlocksTime, data.blocktime) && data.blocktime.length >= MAX_BINS )
+				if( !_.isEqual($scope.lastBlocksTime, data.blocktime) )
 					$scope.lastBlocksTime = data.blocktime;
 
-				if( !_.isEqual($scope.difficultyChart, data.difficulty) && data.difficulty.length >= MAX_BINS )
+				if( !_.isEqual($scope.difficultyChart, data.difficulty) )
 					$scope.difficultyChart = data.difficulty;
 
 				if( !_.isEqual($scope.blockPropagationChart, data.propagation.histogram) ) {
@@ -348,18 +348,18 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 
 				data.uncleCount.reverse();
 
-				if( !_.isEqual($scope.uncleCountChart, data.uncleCount) && data.uncleCount.length >= MAX_BINS ) {
+				if( !_.isEqual($scope.uncleCountChart, data.uncleCount) ) {
 					$scope.uncleCount = data.uncleCount[data.uncleCount.length-2] + data.uncleCount[data.uncleCount.length-1];
 					$scope.uncleCountChart = data.uncleCount;
 				}
 
-				if( !_.isEqual($scope.transactionDensity, data.transactions) && data.transactions.length >= MAX_BINS )
+				if( !_.isEqual($scope.transactionDensity, data.transactions) )
 					$scope.transactionDensity = data.transactions;
 
-				if( !_.isEqual($scope.gasSpending, data.gasSpending) && data.gasSpending.length >= MAX_BINS )
+				if( !_.isEqual($scope.gasSpending, data.gasSpending) )
 					$scope.gasSpending = data.gasSpending;
 
-				if( !_.isEqual($scope.stablePrice, data.stablePrice) && data.stablePrice.length >= MAX_BINS )
+				if( !_.isEqual($scope.stablePrice, data.stablePrice) )
 					$scope.stablePrice = data.stablePrice;
 
 				if( !_.isEqual($scope.miners, data.miners) ) {
