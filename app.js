@@ -408,7 +408,7 @@ var nodeCleanupTimeout = setInterval( function ()
 
 	Nodes.getCharts();
 
-}, 1000*60*60);
+}, 1000*60);
 
 server.listen(process.env.PORT || 3000);
 
