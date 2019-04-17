@@ -613,13 +613,13 @@ function timeClass(timestamp)
 
 function blockTimeClass(diff)
 {
-	if(diff <= 13)
+	if(diff <= 2)
 		return 'text-success';
 
-	if(diff <= 20)
+	if(diff <= 2.5)
 		return 'text-warning';
 
-	if(diff <= 30)
+	if(diff <= 3)
 		return 'text-orange';
 
 	return 'text-danger'
