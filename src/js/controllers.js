@@ -142,6 +142,8 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 		switch(action)
 		{
 			case "init":
+				var oldNodes = $scope.nodes;
+				var diff = data.length;
 				$scope.nodes = data;
 
 				_.forEach($scope.nodes, function (node, index) {
@@ -162,9 +164,19 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 
 					// Init or recover pin
 					node.pinned = ($scope.pinned.indexOf(node.id) >= 0 ? true : false);
+
+					// calculate diff only when node count is not change
+					if (data.length === oldNodes.length) {
+						for (var i = 0; i < oldNodes.length; ++i) {
+							if (node.info.node === oldNodes[i].info.node) {
+								--diff;
+								break;
+							}
+						}
+					}
 				});
 
-				if( $scope.nodes.length > 0 )
+				if( data.length !== oldNodes.length || diff != 0 )
 				{
 					toastr['success']("Got nodes list", "Got nodes!");
 
