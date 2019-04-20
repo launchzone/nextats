@@ -88,9 +88,16 @@ block content
               div.clearfix
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
-              i.icon-difficulty
-              span.small-title gas limit
-              sparkchart.big-details.spark-difficulty(data="{{lastGasLimit.join(',')}}")
+              i.icon-gasprice
+              span.small-title median price
+              sparkchart.big-details.spark-medianprice(data="{{medianPrice.join(',')}}")
+              div.clearfix
+        div.row(ng-cloak)
+          div.col-xs-12.stat-holder
+            div.big-info.chart.text-info
+              i.icon-mining
+              span.small-title block weight
+              sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
               div.clearfix
       div.col-xs-3
         div.row(ng-cloak)
