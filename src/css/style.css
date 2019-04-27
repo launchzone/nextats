@@ -196,7 +196,7 @@ span.small-title span.small {
 
 .big-info.chart {
 	height: 120px;
-	-webkit-box-sizing: border-box
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -325,7 +325,7 @@ table td i {
 table td.peerPropagationChart {
 	padding: 4px 5px !important;
 }
-nodepropagchart {
+.nodepropagchart {
 	display: inline-block;
 	width: 107px;
 	height: 20px;
