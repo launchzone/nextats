@@ -85,26 +85,27 @@ block content
               span.small-title block weight
               sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
               div.clearfix
+        div.row(ng-cloak)
+          div.col-xs-12.stat-holder
+            div.big-info.chart.text-info
+              i.icon-gasprice
+              span.small-title nUSD to absorb
+              sparkchart.big-details.spark-supplytoabsorb(data="{{toAbsorb.join(',')}}")
+              div.clearfix
       div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
               i.icon-gasprice
-              span.small-title gas spending
-              sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
-              div.clearfix
-          div.col-xs-12.stat-holder
-            div.big-info.chart.text-info
-              i.icon-gasprice
-              span.small-title median price
-              sparkchart.big-details.spark-medianprice(data="{{medianPrice.join(',')}}")
+              span.small-title stablecoin price
+              sparkchart.big-details.spark-stableprice(data="{{stablePrice.join(',')}}")
               div.clearfix
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
               i.icon-gasprice
-              span.small-title stablecoin to absorb
-              sparkchart.big-details.spark-supplytoabsorb(data="{{toAbsorb.join(',')}}")
+              span.small-title median price
+              sparkchart.big-details.spark-medianprice(data="{{medianPrice.join(',')}}")
               div.clearfix
       div.col-xs-3
         div.row(ng-cloak)

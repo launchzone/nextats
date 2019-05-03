@@ -379,7 +379,7 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 				if( !_.isEqual($scope.medianPrice, data.medianPrice) )
 					$scope.medianPrice = data.medianPrice;
 
-				f( !_.isEqual($scope.toAbsorb, data.toAbsorb) )
+				if( !_.isEqual($scope.toAbsorb, data.toAbsorb) )
 					$scope.toAbsorb = data.toAbsorb;
 
 				if( !_.isEqual($scope.miners, data.miners) ) {
