@@ -74,24 +74,23 @@ block content
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
-              i.icon-gasprice
-              span.small-title gas spending
-              sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
+              i.icon-mining
+              span.small-title block weight
+              sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
               div.clearfix
       div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
               i.icon-gasprice
-              span.small-title stablecoin price
-              sparkchart.big-details.spark-stableprice(data="{{stablePrice.join(',')}}")
+              span.small-title gas spending
+              sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
               div.clearfix
-        div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
-              i.icon-mining
-              span.small-title block weight
-              sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
+              i.icon-difficulty
+              span.small-title gas limit
+              sparkchart.big-details.spark-difficulty(data="{{lastGasLimit.join(',')}}")
               div.clearfix
       div.col-xs-3
         div.row(ng-cloak)
