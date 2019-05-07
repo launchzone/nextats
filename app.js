@@ -50,6 +50,7 @@ var server;
 
 // Init API Socket connection
 api = new Primus(server, {
+	pingInterval: false,
 	transformer: 'websockets',
 	pathname: '/api',
 	parser: 'JSON'
