@@ -107,6 +107,13 @@ block content
               span.small-title median price
               sparkchart.big-details.spark-medianprice(data="{{medianPrice.join(',')}}")
               div.clearfix
+        div.row(ng-cloak)
+          div.col-xs-12.stat-holder
+            div.big-info.chart.text-info
+              i.icon-gasprice
+              span.small-title nUSD absorbed
+              sparkchart.big-details.spark-supplytoabsorb(data="{{absorbed.join(',')}}")
+              div.clearfix
       div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
