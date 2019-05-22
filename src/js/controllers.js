@@ -30,6 +30,7 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 	// $scope.medianPrice = _.fill(Array(MAX_BINS), 0);
 	// $scope.toAbsorb = _.fill(Array(MAX_BINS), 0);
 	// $scope.absorbed = _.fill(Array(MAX_BINS), 0);
+	// $scope.supplySTB = _.fill(Array(MAX_BINS), 0);
 	// $scope.miners = [];
 
 	$scope.nodes = [];
@@ -385,6 +386,9 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 
 				if( !_.isEqual($scope.absorbed, data.absorbed) )
 					$scope.absorbed = data.absorbed;
+
+				if( !_.isEqual($scope.supplySTB, data.supplySTB) )
+					$scope.supplySTB = data.supplySTB;
 
 				if( !_.isEqual($scope.miners, data.miners) ) {
 					$scope.miners = data.miners;
