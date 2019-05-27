@@ -1,7 +1,7 @@
 FROM node
 
-RUN git clone https://github.com/goerli/netstats-server /netstats-server
-WORKDIR /netstats-server
+RUN git clone https://github.com/nextyio/nextats /nextats
+WORKDIR /nextats
 RUN npm install
 RUN npm install -g grunt-cli
 RUN grunt
