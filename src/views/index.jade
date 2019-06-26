@@ -89,21 +89,21 @@ block content
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
               i.icon-gasprice
-              span.small-title nUSD supply
+              span.small-title stablecoin supply
               sparkchart.big-details.spark-supplystb(data="{{supplySTB.join(',')}}")
               div.clearfix
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
               i.icon-gasprice
-              span.small-title nUSD to absorb
+              span.small-title remain to absorb
               sparkchart.big-details.spark-supplytoabsorb(data="{{toAbsorb.join(',')}}")
               div.clearfix
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
               i.icon-gasprice
-              span.small-title nUSD absorbed
+              span.small-title absorbed/block
               sparkchart.big-details.spark-supplytoabsorb(data="{{absorbed.join(',')}}")
               div.clearfix
       div.col-xs-3
@@ -111,14 +111,14 @@ block content
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
               i.icon-gasprice
-              span.small-title stablecoin price
+              span.small-title market price deviation
               sparkchart.big-details.spark-stableprice(data="{{stablePrice.join(',')}}")
               div.clearfix
         div.row(ng-cloak)
           div.col-xs-12.stat-holder
             div.big-info.chart.text-info
               i.icon-gasprice
-              span.small-title median price
+              span.small-title median price deviation
               sparkchart.big-details.spark-medianprice(data="{{medianPrice.join(',')}}")
               div.clearfix
       div.col-xs-3
