@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "nextats",
+            "script": "npm",
+            "args" : "start"
+        }
+    ]
+}
