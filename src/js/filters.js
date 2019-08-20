@@ -198,16 +198,16 @@ angular.module('netStatsApp.filters', [])
 		if(stats.block.number < bestBlock)
 			return 'text-gray';
 
-		if(stats.block.propagation == 0)
+		if(stats.block.propagation < 333)
 			return 'text-info';
 
-		if(stats.block.propagation < 1000)
+		if(stats.block.propagation < 666)
 			return 'text-success';
 
-		if(stats.block.propagation < 3000)
+		if(stats.block.propagation < 999)
 			return 'text-warning';
 
-		if(stats.block.propagation < 7000)
+		if(stats.block.propagation < 2000)
 			return 'text-orange';
 
 		return 'text-danger'
@@ -221,16 +221,16 @@ angular.module('netStatsApp.filters', [])
 		if(stats.block.number < bestBlock)
 			return 'text-gray';
 
-		if(stats.propagationAvg == 0)
+		if(stats.propagationAvg < 333)
 			return 'text-info';
 
-		if(stats.propagationAvg < 1000)
+		if(stats.propagationAvg < 666)
 			return 'text-success';
 
-		if(stats.propagationAvg < 3000)
+		if(stats.propagationAvg < 999)
 			return 'text-warning';
 
-		if(stats.propagationAvg < 7000)
+		if(stats.propagationAvg < 2000)
 			return 'text-orange';
 
 		return 'text-danger'
@@ -241,16 +241,16 @@ angular.module('netStatsApp.filters', [])
 		if( ! active)
 			return 'text-gray';
 
-		if(propagationAvg == 0)
+		if(propagationAvg < 333)
 			return 'text-info';
 
-		if(propagationAvg < 1000)
+		if(propagationAvg < 666)
 			return 'text-success';
 
-		if(propagationAvg < 3000)
+		if(propagationAvg < 999)
 			return 'text-warning';
 
-		if(propagationAvg < 7000)
+		if(propagationAvg < 2000)
 			return 'text-orange';
 
 		return 'text-danger'
@@ -269,11 +269,17 @@ angular.module('netStatsApp.filters', [])
 		if(stats.active === false)
 			return 'text-danger';
 
-		if(stats.latency <= 100)
+		if(stats.latency <= 111)
+			return 'text-info';
+
+		if(stats.latency <= 333)
 			return 'text-success';
 
-		if(stats.latency <= 1000)
+		if(stats.latency <= 999)
 			return 'text-warning';
+
+		if(stats.latency <= 2000)
+			return 'text-orange';
 
 		return 'text-danger'
 	};
@@ -285,12 +291,12 @@ angular.module('netStatsApp.filters', [])
 
 		// var time = Math.floor((new Date()).getTime() / 1000);
 		var time = (new Date()).getTime();
-		var diff = Math.floor((time - timestamp)/1000);
+		var diff = (time - timestamp)/1000;
 
 		if(diff < 60)
-			return Math.round(diff) + ' s ago';
+			return diff.toFixed(1) + ' s ago';
 
-		return moment.duration(Math.round(diff), 's').humanize() + ' ago';
+		return moment.duration(diff.toFixed(1), 's').humanize() + ' ago';
 	};
 })
 .filter('networkHashrateFilter', ['$sce', '$filter', function($sce, filter) {
@@ -402,11 +408,17 @@ angular.module('netStatsApp.filters', [])
 		if( ! active )
 			return 'text-gray';
 
-		if(uptime >= 90)
-			return 'text-success';
+		if(uptime == 100)
+			return 'text-info';
 
-		if(uptime >= 75)
+		if(uptime >= 99)
+			return 'text-success';
+		
+		if(uptime >=97)
 			return 'text-warning';
+
+		if(uptime >= 93)
+			return 'text-orange';
 
 		return 'text-danger';
 	};
@@ -506,14 +518,18 @@ angular.module('netStatsApp.filters', [])
 	return function(blocks, prefix) {
 		if(typeof prefix === 'undefined')
 			prefix = 'bg-';
-		if(blocks <= 6)
-			return prefix + 'success';
 
-		if(blocks <= 12)
+		if(blocks <= 1)
 			return prefix + 'info';
 
-		if(blocks <= 18)
+		if(blocks <= 2)
+			return prefix + 'success';
+
+		if(blocks <= 3)
 			return prefix + 'warning';
+
+		if(blocks <= 4)
+			return prefix + 'orange';
 
 		return prefix + 'danger';
 	};
@@ -613,14 +629,19 @@ function timeClass(timestamp)
 
 function blockTimeClass(diff)
 {
-	if(diff <= 2)
+	var d = Math.abs(diff-2.0);
+
+	if(diff <= 0.05)
+		return 'text-info';
+
+	if(diff <= 0.10)
 		return 'text-success';
 
-	if(diff <= 2.5)
+	if(diff <= 0.20)
 		return 'text-warning';
 
-	if(diff <= 3)
+	if(diff <= 0.40)
 		return 'text-orange';
 
-	return 'text-danger'
+	return 'text-danger';
 }
