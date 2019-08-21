@@ -629,18 +629,16 @@ function timeClass(timestamp)
 
 function blockTimeClass(diff)
 {
-	var d = Math.abs(diff-2.0);
-
-	if(diff <= 0.05)
+	if(diff < 1.95)
 		return 'text-info';
 
-	if(diff <= 0.10)
+	if(diff < 2.05)
 		return 'text-success';
 
-	if(diff <= 0.20)
+	if(diff < 2.15)
 		return 'text-warning';
 
-	if(diff <= 0.40)
+	if(diff < 2.35)
 		return 'text-orange';
 
 	return 'text-danger';
