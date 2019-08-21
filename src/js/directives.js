@@ -340,8 +340,8 @@ angular.module('netStatsApp.directives', [])
 					.interpolate(d3.interpolateRound);
 
 				var color = d3.scale.linear()
-					.domain([1000, 2000, 3000, MAX_PROPAGATION_RANGE])
-					.range(["#50fa7b", "#f1fa8c", "#ffb86c", "#ff5555"]);
+					.domain([111, 222, 444, 888, MAX_PROPAGATION_RANGE])
+					.range(["lightgreen", "yellowgreen", "yellow", "orange", "red"]);
 
 				var xAxis = d3.svg.axis()
 					.scale(x)
