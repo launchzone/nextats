@@ -119,7 +119,7 @@ block content
             th.th-nodecheck
               i.icon-check-o(data-toggle="tooltip", data-placement="top", title="Sort by active status", ng-click="orderTable(['stats.active'], false)")
             th
-              i.icon-mining(data-toggle="tooltip", data-placement="top", title="Is staking", ng-click="orderTable(['-stats.hashrate'], false)")
+              i.icon-mining(data-toggle="tooltip", data-placement="top", title="Is staking", ng-click="orderTable(['-stats.mining'], false)")
             th.th-nodename(style="min-width: 150px")
               i.icon-node(data-toggle="tooltip", data-placement="top", title="Node name", ng-click="orderTable(['info.name'], false)")
               input.small(type="search" ng-model="name_filter" size=10 placeholder="filter nodes..." aria-label="filter nodes" style="background:none; border: solid 1px gray; padding: 0px 2px;")
