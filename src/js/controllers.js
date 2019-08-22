@@ -56,7 +56,6 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 		{
 			$scope.reverse = reverse;
 			$scope.originalPredicate = predicate;
-			$scope.predicate = _.union($scope.prefixPredicate, predicate);
 		}
 		else
 		{
@@ -67,12 +66,15 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 					predicate[key] = (value[0] === '-' ? value.replace('-', '') : '-' + value);
 				});
 			}
-
-			$scope.predicate = _.union($scope.prefixPredicate, predicate);
 		}
 
-		$localStorage.predicate = $scope.predicate;
-		$localStorage.reverse = $scope.reverse;
+		if (predicate.includes('stats.active') || predicate.includes('-stats.active')) {
+			$scope.predicate = _.union(predicate, $scope.prefixPredicate);
+		} else {
+			$scope.predicate = _.union($scope.prefixPredicate, predicate);
+			$localStorage.predicate = $scope.predicate;
+			$localStorage.reverse = $scope.reverse;
+		}
 	}
 
 	$scope.pinNode = function(id)
