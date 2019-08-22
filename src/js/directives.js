@@ -130,13 +130,13 @@ angular.module('netStatsApp.directives', [])
 						};
 						if (attrs.class.includes("blocktimes")) {
 							options.colorMap = jQuery.range_map({
-								'0.00:1.00': 'cyan',
-								'1.60:1.80': 'mediumspringgreen',
-								'1.80:2.05': 'lightgreen',
-								'2.05:2.15': 'greenyellow',
-								'2.15:2.30': 'yellow',
-								'2.35:2.60': 'orange',
-								'2.60:': 'red'
+								':1.5': 	'darkgreen',
+								'1.5:1.8':	'green',
+								'1.8:2.0':	'lightgreen',
+								'2.0:2.3':	'#c8f648',
+								'2.3:2.6':	'yellow',
+								'2.6:3.0':	'orange',
+								'3:':		'red'
 							});
 						// } else if (attrs.class.includes("price")) {
 						// 	options.colorMap = jQuery.range_map({
