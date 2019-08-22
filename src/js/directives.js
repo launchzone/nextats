@@ -124,12 +124,41 @@ angular.module('netStatsApp.directives', [])
 				{
 					attrs.$observe("data", function (newValue)
 					{
-						element.html(newValue);
-						element.addClass("big-details");
-						element.sparkline('html', {
+						var options = {
 							type: 'bar',
 							tooltipSuffix: (attrs.tooltipsuffix || '')
-						});
+						};
+						if (attrs.class.includes("blocktimes")) {
+							options.colorMap = jQuery.range_map({
+								'0.00:1.00': 'cyan',
+								'1.60:1.80': 'mediumspringgreen',
+								'1.80:2.05': 'lightgreen',
+								'2.05:2.15': 'greenyellow',
+								'2.15:2.30': 'yellow',
+								'2.35:2.60': 'orange',
+								'2.60:': 'red'
+							});
+						// } else if (attrs.class.includes("price")) {
+						// 	options.colorMap = jQuery.range_map({
+						// 		'0.8:': 'lightcyan',
+						// 		'0.03:0.8': 'cyan',
+						// 		'0.01:0.03' : 'mediumspringgreen',
+						// 		'0:0.01': 'lightgreen',
+						// 		'-0.01:0': 'greenyellow',
+						// 		'-0.03:-0.01': 'yellow',
+						// 		'-0.8:-0.03': 'orange',
+						// 		':-0.8': 'red'
+						// 	});
+						} else {
+							options.colorMap = jQuery.range_map({
+								'-0.0001:0.0001' : '#444444',
+								'0.0001:': '#44eeee',
+								':-0.0001': '#ee4444',
+							});
+						}
+						element.html(newValue);
+						element.addClass("big-details");
+						element.sparkline('html', options);
 					});
 				};
 			}
