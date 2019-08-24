@@ -70,6 +70,7 @@ table td {
 
 ul.pagination li {
 	display: inline;
+	color: #8be9fd;
 }
 
 ul.pagination li.current a {
