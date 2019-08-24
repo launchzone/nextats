@@ -22,7 +22,7 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 	$scope.bestStats = {};
 	$scope.pageBegin = 1;
 	$scope.currentPage = 1;
-	$scope.limit = 20;
+	$scope.limit = 10;
 	// $scope.lastGasLimit = _.fill(Array(MAX_BINS), 2);
 	// $scope.lastBlocksTime = _.fill(Array(MAX_BINS), 2);
 	// $scope.difficultyChart = _.fill(Array(MAX_BINS), 2);
