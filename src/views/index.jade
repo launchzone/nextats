@@ -159,8 +159,8 @@ block content
           li(ng-repeat='n in [-3, -2, -1, 0, 1, 2, 3]' ng-class="{current: currentPage == currentPage + n}")
             a(ng-if="currentPage + n > 0 && (currentPage + n) < (results.length / limit)",ng-click='goToPage(currentPage + n)') {{currentPage + n}}
           // Next btn, if next exists
-          li.arrow(ng-if="currentPage < (results.length / limit) + 7 && (currentPage + 7) < (results.length / limit)")
-            a(ng-click='goToPage(currentPage + 7)') »
+          li.arrow(ng-if="currentPage < (results.length / limit) + 3 && (currentPage + 3) < (results.length / limit)")
+            a(ng-click='goToPage(currentPage + 3)') »
           // if There is more to go, have a +10 btn option
           li.arrow(ng-if="currentPage < (results.length / limit) - 10")
             a(ng-click='goToPage(currentPage + 10)') »»
