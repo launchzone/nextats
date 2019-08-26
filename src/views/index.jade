@@ -94,7 +94,7 @@ block content
               i.icon-mining(data-toggle="tooltip", data-placement="top", title="Is staking", ng-click="orderTable(['-stats.mining'], false)")
             th.th-nodename(style="min-width: 150px")
               i.icon-node(data-toggle="tooltip", data-placement="top", title="Node name", ng-click="orderTable(['info.name'], false)")
-              input.small(type="search" ng-model="name_filter" size=10 placeholder="filter nodes..." aria-label="filter nodes" style="background:none; border: solid 1px gray; padding: 0px 2px;")
+              input.small(type="search" ng-change="goToPage(1)" ng-model="name_filter" size=10 placeholder="filter nodes..." aria-label="filter nodes" style="background:none; border: solid 1px gray; padding: 0px 2px;")
             th.th-nodetype
               i.icon-laptop(data-toggle="tooltip", data-placement="top", title="Node type", ng-click="orderTable(['info.node'], false)")
               input.small(ng-model="limit" ng-change="goToPage(1)" size=3 placeholder="20" aria-label="limit" style="background:none; border: solid 1px gray; padding: 0px 2px; text-align: right;")
