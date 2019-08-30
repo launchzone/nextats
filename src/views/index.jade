@@ -59,6 +59,13 @@ block content
               span.small-title block weight
               sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
               div.clearfix
+        div.row(ng-cloak)
+          div.col-xs-12.stat-holder
+            div.big-info.chart.text-info
+              i.icon-mining
+              span.small-title block sealer
+              sparkchart.big-details.spark-sealer(data="{{sealerChart.join(',')}}")
+              div.clearfix
       div.col-xs-3
         div.row(ng-cloak)
           div.col-xs-12.stat-holder

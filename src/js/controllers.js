@@ -359,6 +359,9 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 				if( !_.isEqual($scope.difficultyChart, data.difficulty) )
 					$scope.difficultyChart = data.difficulty;
 
+				if( !_.isEqual($scope.sealerChart, data.sealer) )
+					$scope.sealerChart = data.sealer;
+
 				if( !_.isEqual($scope.blockPropagationChart, data.propagation.histogram) ) {
 					$scope.blockPropagationChart = data.propagation.histogram;
 					$scope.blockPropagationAvg = data.propagation.avg;
