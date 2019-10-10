@@ -138,6 +138,18 @@ angular.module('netStatsApp.directives', [])
 								'2.6:3.0':	'orange',
 								'3:':		'red'
 							});
+						} else if (attrs.class.includes("difficulty")) {
+							var colorMap = {
+								':': '#8be9fd' // text-info
+							};
+							var a = newValue.split(',');
+							for (var k in a) {
+								var v = a[k];
+								if (typeof v == 'string' && !v.endsWith('0')) {
+									colorMap[v] = '#ff5555'; // text-danger
+								}
+							}
+							options.colorMap = jQuery.range_map(colorMap);
 						// } else if (attrs.class.includes("price")) {
 						// 	options.colorMap = jQuery.range_map({
 						// 		'0.8:': 'lightcyan',
