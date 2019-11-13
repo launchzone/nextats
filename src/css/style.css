@@ -64,6 +64,34 @@ table td {
 	border-radius: 2px;
 }
 
+.pagination {
+	font-size: 15px;
+}
+
+ul.pagination li {
+	display: inline;
+	color: #8be9fd;
+}
+
+ul.pagination li.current a {
+	margin: 10px;
+	color: #29444a;
+	font-size: 17px;
+}
+
+ul.pagination li a {
+	margin: 5px;
+	color: #8be9fd;
+	cursor: pointer;
+	padding: 5px 5px 5px 5px;
+}
+
+ul.pagination li a:hover {
+	text-decoration: none;
+	border-top: 1px #29444a solid;
+}
+
+
 .bg-success,
 .text-success .propagationBox {
 	background: #50fa7b;
