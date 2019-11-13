@@ -125,7 +125,7 @@ block content
               input.small(type="search" ng-change="goToPage(1)" ng-model="name_filter" size=10 placeholder="filter nodes..." aria-label="filter nodes" style="background:none; border: solid 1px gray; padding: 0px 2px;")
             th.th-nodetype
               i.icon-laptop(data-toggle="tooltip", data-placement="top", title="Node type", ng-click="orderTable(['info.node'], false)")
-              input.small(ng-model="limit" ng-change="goToPage(1)" size=3 placeholder="20" aria-label="limit" style="background:none; border: solid 1px gray; padding: 0px 2px; text-align: right;")
+              input.small(ng-model="limit" ng-change="goToPage(1)" size=3 placeholder="limit" aria-label="limit" style="background:none; border: solid 1px gray; padding: 0px 2px; text-align: right;")
               span.small /{{results.length}} nodes
             th.th-latency
               i.icon-clock(data-toggle="tooltip", data-placement="top", title="Node latency", ng-click="orderTable(['stats.latency'], false)")
@@ -181,14 +181,16 @@ block content
         ul.pagination.right()
           li {{"Page: "}}
           // if current page is > 10, have -10 back btn
-          li.arrow(ng-if="currentPage > 5")
-            a(ng-click='goToPage(1)') ««
+          li.arrow(ng-if="currentPage > 10")
+            a(ng-click='goToPage(currentPage - 10)') ««
+          li.arrow(ng-if="currentPage > 3")
+            a(ng-click='goToPage(currentPage - 3)') «
           // have previous & nect page as clicable option
           li(ng-repeat='n in [-4, -3, -2, -1, 0, 1, 2, 3, 4]' ng-class="{current: currentPage == currentPage + n}")
-            a(ng-if="currentPage + n > 0 && (currentPage + n) < (results.length / limit)",ng-click='goToPage(currentPage + n)') {{currentPage + n}}
+            a(ng-if="currentPage + n > 0 && (currentPage + n - 1) * (limit || 10) < results.length",ng-click='goToPage(currentPage + n)') {{currentPage + n}}
           // Next btn, if next exists
-          li.arrow(ng-if="currentPage < (results.length / limit) + 3 && (currentPage + 3) < (results.length / limit)")
+          li.arrow(ng-if="(currentPage + 3 - 1) * (limit || 10) < results.length")
             a(ng-click='goToPage(currentPage + 3)') »
           // if There is more to go, have a +10 btn option
-          li.arrow(ng-if="currentPage < (results.length / limit) - 10")
+          li.arrow(ng-if="(currentPage + 10 - 1) * (limit || 10) < results.length")
             a(ng-click='goToPage(currentPage + 10)') »»

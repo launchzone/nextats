@@ -20,9 +20,11 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 	$scope.avgHashrate = 0;
 	$scope.uncleCount = 0;
 	$scope.bestStats = {};
+
 	$scope.pageBegin = 1;
 	$scope.currentPage = 1;
 	$scope.limit = 10;
+
 	// $scope.lastGasLimit = _.fill(Array(MAX_BINS), 2);
 	// $scope.lastBlocksTime = _.fill(Array(MAX_BINS), 2);
 	// $scope.difficultyChart = _.fill(Array(MAX_BINS), 2);
@@ -51,10 +53,6 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 
 	$scope.prefixPredicate = ['-pinned', '-stats.active'];
 	$scope.originalPredicate = ['-stats.block.number', 'stats.block.propagation'];
-	$scope.goToPage = function (page) {
-		$scope.pageBegin = (page-1) * $scope.limit
-		$scope.currentPage = page
-	}
 	$scope.orderTable = function(predicate, reverse)
 	{
 		if(!_.isEqual(predicate, $scope.originalPredicate))
@@ -81,9 +79,6 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 			$localStorage.reverse = $scope.reverse;
 		}
 	}
-	$scope.getPageCount = function(nodeCount,limit) {
-		return Math.ceil(nodeCount/(limit||1))
-	}
 	$scope.pinNode = function(id)
 	{
 		index = findIndex({id: id});
@@ -103,6 +98,11 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 		}
 
 		$localStorage.pinned = $scope.pinned;
+	}
+
+	$scope.goToPage = function (page) {
+		$scope.pageBegin = (page-1) * ($scope.limit || 10)
+		$scope.currentPage = page
 	}
 
 	var timeout = setInterval(function ()
