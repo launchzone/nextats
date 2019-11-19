@@ -21,7 +21,7 @@ netStatsApp.controller('StatsCtrl', function($scope, $filter, $localStorage, soc
 	$scope.uncleCount = 0;
 	$scope.bestStats = {};
 
-	$scope.pageBegin = 1;
+	$scope.pageBegin = 0;
 	$scope.currentPage = 1;
 	$scope.limit = 10;
 
